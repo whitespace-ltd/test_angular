@@ -1,0 +1,39 @@
+<h1>Sign in</h1>
+
+<form accept-charset="UTF-8" action="" class="new_user ng-pristine ng-invalid ng-invalid-required" id="new_user" method="post" name="formData" ng-submit="signin(formData.$valid)" novalidate="novalidate" role="form">
+
+    <div class="form-group">
+      <label for="user_username">Username</label>
+      <div class="row">
+        <div class="col-sm-6">
+          <input autofocus="autofocus" class="form-control ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-valid-minlength ng-valid-pattern" id="user_username" name="user[username]" ng-maxlength="10" ng-minlength="4" ng-model="user.username" ng-pattern="/^\w+$/" ng-required="true" required="required" value="" type="text">
+          <p ng-show="formData['user[username]'].$error.required &amp;&amp; !formData['user[username]'].$pristine" class="help-block ng-hide">Username can't be empty</p>
+          <p ng-show="formData['user[username]'].$error.minlength &amp;&amp; !formData['user[username]'].$pristine" class="help-block ng-hide">Username is too short.</p>
+          <p ng-show="formData['user[username]'].$error.maxlength &amp;&amp; !formData['user[username]'].$pristine" class="help-block ng-hide">Username is too long.</p>
+          <p ng-show="formData['user[username]'].$error.pattern &amp;&amp; !formData['user[username]'].$pristine" class="help-block ng-hide">Username can only contain letters and digits</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="user_password">Password</label>
+      <div class="row">
+        <div class="col-sm-6">
+          <input class="form-control ng-pristine ng-invalid ng-invalid-required" id="user_password" name="user[password]" ng-model="user.password" ng-required="true" required="required" type="password">
+          <p ng-show="formData['user[password]'].$error.required &amp;&amp; !formData['user[password]'].$pristine" class="help-block ng-hide">Password can't be empty</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="checkbox">
+      <input name="user[remember_me]" value="0" type="hidden"><input id="user_remember_me" name="user[remember_me]" value="1" type="checkbox"> <label for="user_remember_me">Remember me</label>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <!-- <input disabled="disabled" class="btn btn-primary" name="commit" ng-disabled="!formData.$valid" value="Sign in" type="submit"> -->
+        <input class="btn btn-primary" name="commit" value="Sign in" type="submit">
+      </div>
+    </div>
+
+</form>
